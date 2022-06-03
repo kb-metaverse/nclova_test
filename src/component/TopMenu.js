@@ -1,5 +1,7 @@
 import { BrowserRouter, Link ,Route, Routes } from "react-router-dom";
 import Counter from "./Counter";
+import FormValidation from "./FormValidation";
+import Main from "./Main";
 
 const TopMenu = () => {
     return(
@@ -8,11 +10,13 @@ const TopMenu = () => {
             <Link to="/" style={{paddingLeft : 20}}>Home</Link>
             <Link to="/test" style={{paddingLeft : 20}}>React Testing</Link>
             <Link to="/form-validation" style={{paddingLeft : 20}}>Form Validation</Link>
-
-            <Routes>
-                <Route exact path="/" component={Counter}></Route>
-            </Routes>
         </div>
+            <Routes>
+                <Route exact path="/" element={<Main/>}></Route>
+                <Route path="/test" element={<Counter/>}></Route>
+                <Route path="form-validation" element={<FormValidation/>}></Route>
+            </Routes>
+        
         </BrowserRouter>
     )
 }
